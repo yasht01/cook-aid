@@ -1,0 +1,51 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- affirm
+- dish_choice
+- goodbye
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- start
+entities:
+- dish_name
+slots:
+  dish_name:
+    type: text
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_cook:
+  - text: What do you want to cook ?
+  - text: What does your mind crave today ?
+  utter_dish_confirm:
+  - text: You want to cook {dish_name} right
+  utter_ingredients:
+  - text: To cooks {dish_name} you need 20 minutes and it will need Garlic, cheese ,bread, olive oil, salt and chilli flakes
+  utter_lets_start:
+  - text: So lets get started
+  utter_start_recipes:
+  - text: First step, Boil some water
+actions:
+- utter_cook
+- utter_dish_confirm
+- utter_ingredients
+- utter_lets_start
+- utter_start_recipes

@@ -1,0 +1,68 @@
+version: "2.0"
+
+stories:
+
+- story: cooking
+  steps:
+  - intent: greet
+  - action: utter_cook
+  - intent: dish_choice
+  - action: utter_dish_confirm
+  - intent: affirm
+  - action: utter_ingredients
+  - intent: affirm
+  - action: action_give_recipe
+  - intent: start
+  - action: utter_start_recipes
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_cook
+  - intent: dish_choice
+    entities:
+    - dish_name: laasi
+  - slot_was_set:
+    - dish_name: laasi
+  - action: utter_dish_confirm
+  - intent: affirm
+  - action: utter_ingredients
+  - intent: affirm
+  - action: utter_lets_start
+  - intent: affirm
+  - action: utter_start_recipes
+  - intent: affirm
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_cook
+  - intent: dish_choice
+    entities:
+    - dish_name: rice
+  - slot_was_set:
+    - dish_name: rice
+  - action: utter_dish_confirm
+  - intent: affirm
+  - action: utter_ingredients
+  - intent: affirm
+  - action: utter_lets_start
+  - intent: affirm
+  - action: utter_start_recipes
+
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_cook
+  - intent: dish_choice
+    entities:
+    - dish_name: Burger
+  - slot_was_set:
+    - dish_name: Burger
+  - action: utter_dish_confirm
+  - intent: affirm
+  - action: utter_ingredients
+  - intent: affirm
+  - action: utter_lets_start
+  - intent: affirm
+  - action: utter_start_recipes
