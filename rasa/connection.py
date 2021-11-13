@@ -16,7 +16,7 @@ class recipe():
                 print(idg,qty)
 pp = pprint.PrettyPrinter(width=100, compact=True)
 client = MongoClient()
-client = MongoClient('mongodb+srv://codemonk:database12qw@cluster0.jsshi.mongodb.net')
+client = MongoClient(${{secret.MONGO_DB_URL}})
 dbs=client.list_database_names()
 db=client['myFirstDatabase']
 colls=db.list_collection_names()
