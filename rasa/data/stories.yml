@@ -12,7 +12,22 @@ stories:
   - action: utter_ingredients
   - intent: affirm
   - action: action_give_recipe
-  - intent: start
+  - intent: affirm
+  - action: action_schedule_remider
+  - intent: EXTERNAL_reminder
+  - action: action_react_to_reminder
+
+- story: food_story_1
+  steps:
+  - intent: greet
+  - action: utter_cook
+  - intent: dish_choice
+  - action: utter_dish_confirm
+  - intent: affirm
+  - action: utter_ingredients
+  - intent: affirm
+  - action: action_give_recipe
+  - intent: affirm
   - action: utter_start_recipes
 
 - story: interactive_story_1
@@ -21,34 +36,24 @@ stories:
   - action: utter_cook
   - intent: dish_choice
     entities:
-    - dish_name: laasi
+    - dish_name: pizza
   - slot_was_set:
-    - dish_name: laasi
+    - dish_name: pizza
   - action: utter_dish_confirm
   - intent: affirm
-  - action: utter_ingredients
-  - intent: affirm
-  - action: utter_lets_start
-  - intent: affirm
-  - action: utter_start_recipes
-  - intent: affirm
+  - action: action_give_recipe
 
 - story: interactive_story_2
   steps:
-  - intent: greet
-  - action: utter_cook
   - intent: dish_choice
     entities:
-    - dish_name: rice
+    - dish_name: pizza
   - slot_was_set:
-    - dish_name: rice
+    - dish_name: pizza
   - action: utter_dish_confirm
   - intent: affirm
-  - action: utter_ingredients
-  - intent: affirm
-  - action: utter_lets_start
-  - intent: affirm
-  - action: utter_start_recipes
+  - action: action_give_recipe
+  - action: action_give_recipe
 
 - story: interactive_story_3
   steps:
@@ -56,13 +61,9 @@ stories:
   - action: utter_cook
   - intent: dish_choice
     entities:
-    - dish_name: Burger
+    - dish_name: pizza
   - slot_was_set:
-    - dish_name: Burger
+    - dish_name: pizza
   - action: utter_dish_confirm
   - intent: affirm
-  - action: utter_ingredients
-  - intent: affirm
-  - action: utter_lets_start
-  - intent: affirm
-  - action: utter_start_recipes
+  - action: action_give_recipe
