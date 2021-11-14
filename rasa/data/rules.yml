@@ -11,3 +11,13 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_cook
+
+- rule: Schedule a reminder
+  steps:
+  - intent: deny
+  - action: action_set_reminder
+
+- rule: Trigger `action_react_to_reminder` for `EXTERNAL_reminder`
+  steps:
+  - intent: EXTERNAL_reminder
+  - action: action_react_to_reminder

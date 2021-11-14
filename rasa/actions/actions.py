@@ -36,7 +36,7 @@
 
 from typing import Any, Text, Dict, List
 import datetime
-from rasa_sdk.events import ReminderScheduled
+from rasa_sdk.events import FollowupAction, ReminderScheduled
 from rasa_sdk import Action
 
 from .connection import rec_db
@@ -58,9 +58,7 @@ class ActionGiveRecipe(Action):
         igd=dbc.ingredients(tracker.get_slot('dish_name'))
         print(igd[0])
         dispatcher.utter_message(text=f"This is my recipe for {igd}")
-        global ctr
-        ctr+=1
-        print(ctr)
+        
         return []
 
 class ActionSetReminder(Action):
@@ -88,9 +86,8 @@ class ActionSetReminder(Action):
             name="my_reminder",
             kill_on_user_message=False,
         )
-
         return [reminder]
-
+        
 class ActionReactToReminder(Action):
     def name(self) -> Text:
         return "action_react_to_reminder"
@@ -103,5 +100,11 @@ class ActionReactToReminder(Action):
     ) -> List[Dict[Text, Any]]:
 
         dispatcher.utter_message(f"Reminded!")
-
-        return []
+        print('reached!')
+        
+        global ctr
+        ctr+=1
+        if ctr<2:
+            return [FollowupAction(name="action_set_reminder")]
+        else:
+            return []
