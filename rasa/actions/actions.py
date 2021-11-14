@@ -77,7 +77,7 @@ class ActionSetReminder(Action):
 
         dispatcher.utter_message(f"{steps[rcpCtr]}")
 
-        date = datetime.datetime.now() + datetime.timedelta(seconds=5)
+        date = datetime.datetime.now() + datetime.timedelta(seconds=steps[rcpCtr]['time'])
         entities = tracker.latest_message.get("entities")
 
         reminder = ReminderScheduled(
