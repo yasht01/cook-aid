@@ -68,8 +68,7 @@ def checkDishName(dish_name):
     return ""
 
 dbc=rec_db()
-steps=dbc.steps('pizza')
-no_of_steps=len(steps)
+no_of_steps= 0 
 stepCtr=0
 class ActionGiveRecipe(Action):
 
@@ -104,6 +103,7 @@ class ActionCheckRecipe(Action):
         dish_name = tracker.get_slot('dish_name')
         dish_name = checkDishName(dish_name)
         exists=dbc.check_exists(dish_name)
+        SlotSet("dish_name",dish_name)
         if exists:
             dispatcher.utter_message(text=f"I can help you make {dish_name}")
             SlotSet("exists","yes")
@@ -124,6 +124,10 @@ class ActionSetReminder(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
+        steps=dbc.steps(tracker.get_slot('dish_name'))
+        
+        global no_of_steps
+        no_of_steps = len(steps)
         dispatcher.utter_message(f" You will need the following ingredients for this step:")
         ingd_step = ""
         for igd in steps[stepCtr]['ingredients']:
