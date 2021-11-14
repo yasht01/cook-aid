@@ -17,3 +17,20 @@ stories:
   - intent: EXTERNAL_reminder
   - action: action_react_to_reminder
 
+- story: cooking_denied
+  steps:
+  - intent: greet
+  - action: utter_cook
+  - intent: deny
+  - action: utter_goodbye
+
+- story: cooking_dish_not_found
+  steps:
+    - intent: greet
+    - action: utter_cook
+    - intent: dish_choice
+    - action: action_check_recipe
+    - intent: affirm
+    - action: action_restart
+
+

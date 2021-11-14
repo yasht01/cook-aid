@@ -18,6 +18,9 @@ slots:
   dish_name:
     type: text
     influence_conversation: false
+  exists:
+    type: text
+    influence_conversation: true
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -43,6 +46,8 @@ responses:
   - text: So lets get started
   utter_start_recipes:
   - text: First step, Boil some water
+  utter_start_recipes:
+  - text: Have a good day
 actions:
 - utter_cook
 - utter_dish_confirm
@@ -50,3 +55,6 @@ actions:
 - utter_lets_start
 - utter_start_recipes
 - action_give_recipe
+- action_get_recipe
+- action_set_reminder
+- action_check_recipe
