@@ -45,8 +45,9 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
 dbc=rec_db()
-print(dbc)
-ctr=0
+steps=dbc.steps('pizza')
+rcpCtr=len(steps)
+noOfSteps=0
 class ActionGiveRecipe(Action):
 
     def name(self) -> Text:
@@ -74,7 +75,7 @@ class ActionSetReminder(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message("I will remind you in 5 seconds.")
+        dispatcher.utter_message(f"{steps[rcpCtr]}")
 
         date = datetime.datetime.now() + datetime.timedelta(seconds=5)
         entities = tracker.latest_message.get("entities")
@@ -102,9 +103,9 @@ class ActionReactToReminder(Action):
         dispatcher.utter_message(f"Reminded!")
         print('reached!')
         
-        global ctr
-        ctr+=1
-        if ctr<2:
+        global rcpCtr
+        rcpCtr+=1
+        if rcpCtr==noOfSteps:
             return [FollowupAction(name="action_set_reminder")]
         else:
             return []
