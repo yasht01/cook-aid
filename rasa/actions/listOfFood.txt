@@ -1,0 +1,475 @@
+NorthMughlai
+Mughlai Kabab
+Mughlai Paratha
+Murgh Musallam
+Pasanda
+Qeema Matar
+Rezala
+Punjabi
+Amritsari Papar Warian
+Chicken Tikka
+Chole bhature
+Dal Makhani
+Lassi
+Makki di roti
+Sarson ka saag
+Kashmiri
+Noon Chai
+Rogan Josh
+Shab Deg
+Other
+Aloo gobi
+Aloo Mutter
+Baati
+Baingan bartha
+Barfi (Kaju barfi / Kaju katli)
+Bhatura
+Butter chicken
+Chana masala
+Chapati
+Churma
+Dum Aloo
+Dopiaza
+Egg curry
+Haleem
+Jeera aloo
+Kachori
+Kadai chicken
+Kadhi
+Kahwah
+Keema
+Khichra
+Khichdi
+Kulcha
+Korma
+Kulfi
+Laal maans
+Mattar paneer
+Mirchi Bada
+Mutton curry
+Naan
+Nihari
+Palak Paneer
+Pakora
+Paneer tikka
+Raita
+Rajma
+Rumali roti
+Sai bhaji
+Shahi paneer
+Shami Kebab
+Tandoori chicken
+Paneer Tikka Masala
+Mughlai
+Mughlai Kabab
+Mughlai Paratha
+Murgh Musallam
+Pasanda
+Qeema Matar
+Rezala
+Punjabi
+Amritsari Papar Warian
+Chicken Tikka
+Chole bhature
+Dal Makhani
+Lassi
+Makki di roti
+Sarson ka saag
+Kashmiri
+Noon Chai
+Rogan Josh
+Shab Deg
+Other
+Aloo gobi
+Aloo Mutter
+Baati
+Baingan bartha
+Barfi (Kaju barfi / Kaju katli)
+Bhatura
+Butter chicken
+Chana masala
+Chapati
+Churma
+Dum Aloo
+Dopiaza
+Egg curry
+Haleem
+Jeera aloo
+Kachori
+Kadai chicken
+Kadhi
+Kahwah
+Keema
+Khichra
+Khichdi
+Kulcha
+Korma
+Kulfi
+Laal maans
+Mattar paneer
+Mirchi Bada
+Mutton curry
+Naan
+Nihari
+Palak Paneer
+Pakora
+Paneer tikka
+Raita
+Rajma
+Rumali roti
+Sai bhaji
+Shahi paneer
+Shami Kebab
+Tandoori chicken
+Paneer Tikka Masala
+SouthHyderabadi
+Baghara Baigan
+Hyderabadi Biryani
+Hyderabadi Haleem
+Hyderabadi Marag
+Lukhmi
+Mirchi ka Salan
+Osmania Biscuit
+Other
+Aavakaaya
+Appam (Pesaha Appam)
+Ariselu
+Burger
+Pizza
+pasta
+cake
+ice-cream
+donuts
+maggi
+garlic bread
+Parotta
+Aviyal
+Benne Dose
+Bhajji
+Bisi bele bath
+Bonda
+Chicken 65
+Chicken Chettinad
+Chakna
+Curd rice
+Dahi chutney
+Dopiaza
+Dosa
+Double ka meetha
+Fish moolie
+Idiappam
+Idli
+Injipuli
+Kaalan
+Kakinada Kaja
+Kanji
+Kerala porotta
+Koottu
+Kozhukkattai
+Kuzhambu
+Murukku
+Mysore Pak
+Pachadi
+Palathalikalu
+Paniyaram
+Parotta
+Pesarattu
+Payasam
+Pootharekulu
+Pongal
+Ponganalu
+Poriyal
+Pulihora
+Puttu
+Rasam
+Rice and curry
+Sakinalu
+Sambar
+Sheer korma
+Sevai
+Ulava charu
+Upma
+Uttapam
+Thalassery biryani
+Vada
+Hyderabadi
+Baghara Baigan
+Hyderabadi Biryani
+Hyderabadi Haleem
+Hyderabadi Marag
+Lukhmi
+Mirchi ka Salan
+Osmania Biscuit
+Aavakaaya
+Appam (Pesaha Appam)
+Ariselu
+Parotta
+Aviyal
+Benne Dose
+Bhajji
+Bisi bele bath
+Bonda
+Chicken 65
+Chicken Chettinad
+Chakna
+Curd rice
+Dahi chutney
+Dopiaza
+Dosa
+Double ka meetha
+Fish moolie
+Idiappam
+Idli
+Injipuli
+Kaalan
+Kakinada Kaja
+Kanji
+Kerala porotta
+Koottu
+Kozhukkattai
+Kuzhambu
+Murukku
+Mysore Pak
+Pachadi
+Palathalikalu
+Paniyaram
+Parotta
+Pesarattu
+Payasam
+Pootharekulu
+Pongal
+Ponganalu
+Poriyal
+Pulihora
+Puttu
+Rasam
+Rice and curry
+Sakinalu
+Sambar
+Sheer korma
+Sevai
+Ulava charu
+Upma
+Uttapam
+Thalassery biryani
+Vada
+WestGujarati
+Dhokla
+Khakhra
+Other
+Akuri
+Basundi
+Bhakri
+Bhel puri
+Bombil fry
+Chinese bhel
+Chivda
+Chouriço
+Dahi vada
+Dhansak
+Doodhpak
+Handvo
+Kadboli
+Khatkhate
+Khandvi
+Khichdi
+Kombdi vade
+Kuswar
+Misal
+Misal Pav
+Pav bhaji
+Patoleo
+Patra ni machhi
+Pohe
+Sabudana Khichadi
+Sanna
+Sevpuri
+Shrikhand
+Solkadhi
+Sorpotel
+Thalipeeth
+Vada pav
+Veg Kolhapuri
+Vindaloo
+Xacuti
+Gujarati
+Dhokla
+Khakhra
+Other
+Akuri
+Basundi
+Bhakri
+Bhel puri
+Bombil fry
+Chinese bhel
+Chivda
+Chouriço
+Dahi vada
+Dhansak
+Doodhpak
+Handvo
+Kadboli
+Khatkhate
+Khandvi
+Khichdi
+Kombdi vade
+Kuswar
+Misal
+Misal Pav
+Pav bhaji
+Patoleo
+Patra ni machhi
+Pohe
+Sabudana Khichadi
+Sanna
+Sevpuri
+Shrikhand
+Solkadhi
+Sorpotel
+Thalipeeth
+Vada pav
+Veg Kolhapuri
+Vindaloo
+Xacuti
+EastBengali
+Cham cham
+Charchari
+Jalfrezi
+Indian Chinese cuisine
+Kati roll
+Luchi
+Machher Jhol
+Mishti Doi
+Pantua
+Prawn malai curry
+Rasgulla
+Ras malai
+Sandesh
+Sorshe Ilish
+Odia
+Arisa Pitha
+Chakuli pitha
+Chandrakanti
+Charchari
+Chhena gaja
+Chhena jalebi
+Chhena Jhili
+Chhena kheeri
+Chhena poda
+Chingudi Jhola
+Dahi baigana
+Dahi Machha
+Dahibara Aludam
+Enduri Pitha
+Ghuguni
+Kakara pitha
+Kanika
+Khira sagara
+Khiri
+Maachha Bihana
+Manda pitha
+Ouu khatta
+Pakhala
+Pitha
+Podo pitha
+Rasabali
+Rasagola
+Santula
+Mathapuli
+Bihari
+Litti
+Ghugni
+Sattu
+Khaja
+Motichoor ka Ladoo
+Tilkut
+Anarsa
+Regional (Bhojpuri, Bhojpuri, Magahi)
+Bengali
+Cham cham
+Charchari
+Jalfrezi
+Indian Chinese cuisine
+Kati roll
+Luchi
+Machher Jhol
+Mishti Doi
+Pantua
+Prawn malai curry
+Rasgulla
+Ras malai
+Sandesh
+Sorshe Ilish
+Odia
+Arisa Pitha
+Chakuli pitha
+Chandrakanti
+Charchari
+Chhena gaja
+Chhena jalebi
+Chhena Jhili
+Chhena kheeri
+Chhena poda
+Chingudi Jhola
+Dahi baigana
+Dahi Machha
+Dahibara Aludam
+Enduri Pitha
+Ghuguni
+Kakara pitha
+Kanika
+Khira sagara
+Khiri
+Maachha Bihana
+Manda pitha
+Ouu khatta
+Pakhala
+Pitha
+Podo pitha
+Rasabali
+Rasagola
+Santula
+Mathapuli
+Bihari
+Litti
+Ghugni
+Sattu
+Khaja
+Motichoor ka Ladoo
+Tilkut
+Anarsa
+Regional (Bhojpuri, Bhojpuri, Magahi)
+Miscellaneous
+Biryani
+Chaat
+Chutney
+Dal
+Falooda
+Flattened rice
+Gulab Jamun
+Halwa
+Indian pickle
+Jalebi
+Kheer
+Kofta
+Laddu
+Mango pudding
+Panipuri
+Papadum
+Paratha
+Puri
+Qeema
+Roti
+Sindhi biryani
+Samosa
+Shankarpali
+Soan papdi
+Zarda
+Puri Bhaji
+Indian diaspora
+Chicken tikka masala
+Fish head curry
+Phall
+Nasi kandar
+Pasembur
+Roti canai

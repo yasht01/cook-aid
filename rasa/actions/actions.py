@@ -44,6 +44,29 @@ from .connection import rec_db
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
+with open('/home/donut/cook-aid/rasa/actions/listOfFood.txt','r') as f:
+    food_arr=f.readlines()
+    food_arr=[word.lower() for word in arr]
+def editDistance(s1, s2):
+    if len(s1) > len(s2):
+        s1, s2 = s2, s1
+
+    distances = range(len(s1) + 1)
+    for i2, c2 in enumerate(s2):
+        distances_ = [i2+1]
+        for i1, c1 in enumerate(s1):
+            if c1 == c2:
+                distances_.append(distances[i1])
+            else:
+                distances_.append(1 + min((distances[i1], distances[i1 + 1], distances_[-1])))
+        distances = distances_
+    return distances[-1]
+def checkDishName(dish_name):
+    for i in food_arr:
+        if editDistance(i.lower(),dish_name)<=2:
+            return i.lower()
+    return "doesNotExist"
+
 dbc=rec_db()
 steps=dbc.steps('pizza')
 rcpCtr=len(steps)
@@ -75,9 +98,9 @@ class ActionSetReminder(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(f"{steps[rcpCtr]}")
+        dispatcher.utter_message(f"{steps[noOfSteps]}")
 
-        date = datetime.datetime.now() + datetime.timedelta(seconds=steps[rcpCtr]['time'])
+        date = datetime.datetime.now() + datetime.timedelta(seconds=int(steps[noOfSteps+1]['time']))
         entities = tracker.latest_message.get("entities")
 
         reminder = ReminderScheduled(
@@ -103,8 +126,8 @@ class ActionReactToReminder(Action):
         dispatcher.utter_message(f"Reminded!")
         print('reached!')
         
-        global rcpCtr
-        rcpCtr+=1
+        global noOfSteps
+        noOfSteps+=1
         if rcpCtr==noOfSteps:
             return [FollowupAction(name="action_set_reminder")]
         else:
