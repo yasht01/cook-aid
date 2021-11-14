@@ -36,7 +36,7 @@
 
 from typing import Any, Text, Dict, List
 import datetime
-from rasa_sdk.events import FollowupAction, ReminderScheduled
+from rasa_sdk.events import FollowupAction, ReminderScheduled, SlotSet
 from rasa_sdk import Action
 
 from .connection import rec_db
@@ -65,12 +65,11 @@ def checkDishName(dish_name):
     for i in food_arr:
         if editDistance(i.lower(),dish_name)<=2:
             return i.lower()
-    return "doesNotExist"
+    return ""
 
 dbc=rec_db()
-steps=dbc.steps('pizza')
-rcpCtr=len(steps)
-noOfSteps=0
+no_of_steps= 0 
+stepCtr=0
 class ActionGiveRecipe(Action):
 
     def name(self) -> Text:
@@ -79,10 +78,38 @@ class ActionGiveRecipe(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        igd=dbc.ingredients(tracker.get_slot('dish_name'))
-        print(igd[0])
+        dish_name = tracker.get_slot('dish_name')
+        if dish_name:
+            igd_time=dbc.ingredients(dish_name)
+            ingd_step = ""
+            for igd in igd_time[0]:
+                ingd_step += f"{igd['igd_qty']} {igd['igd_name']}, "
+            dispatcher.utter_message(text=f"To cook {dish_name} you will need:")
+            dispatcher.utter_message(text=ingd_step)
+            dispatcher.utter_message(text=f" Total time required is {igd_time[1]}")
+
         dispatcher.utter_message(text=f"This is my recipe for {igd}")
         
+        return []
+
+class ActionCheckRecipe(Action):
+
+    def name(self) -> Text: 
+        return "action_check_recipe"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dish_name = tracker.get_slot('dish_name')
+        dish_name = checkDishName(dish_name)
+        exists=dbc.check_exists(dish_name)
+        SlotSet("dish_name",dish_name)
+        if exists:
+            dispatcher.utter_message(text=f"I can help you make {dish_name}")
+            SlotSet("exists","yes")
+        else:
+            dispatcher.utter_message(text=f"Sorry,I can't help you make {dish_name}")
+            SlotSet("exists",None)
         return []
 
 class ActionSetReminder(Action):
@@ -97,10 +124,19 @@ class ActionSetReminder(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
+        steps=dbc.steps(tracker.get_slot('dish_name'))
+        
+        global no_of_steps
+        no_of_steps = len(steps)
+        dispatcher.utter_message(f" You will need the following ingredients for this step:")
+        ingd_step = ""
+        for igd in steps[stepCtr]['ingredients']:
+            ingd_step += f"{igd['igd_qty']} {igd['igd_name']}, "
+        dispatcher.utter_message(f"{ingd_step}")
+        
+        dispatcher.utter_message(f"{steps[stepCtr]['instruct']}")
 
-        dispatcher.utter_message(f"{steps[noOfSteps]}")
-
-        date = datetime.datetime.now() + datetime.timedelta(seconds=int(steps[noOfSteps+1]['time']))
+        date = datetime.datetime.now() + datetime.timedelta(seconds=int(steps[stepCtr]['time']))
         entities = tracker.latest_message.get("entities")
 
         reminder = ReminderScheduled(
@@ -123,12 +159,9 @@ class ActionReactToReminder(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(f"Reminded!")
-        print('reached!')
-        
-        global noOfSteps
-        noOfSteps+=1
-        if rcpCtr==noOfSteps:
+        global stepCtr
+        stepCtr+=1
+        if stepCtr<no_of_steps:
             return [FollowupAction(name="action_set_reminder")]
         else:
             return []
